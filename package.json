@@ -1,0 +1,39 @@
+{
+  "name": "webpack-typescript-starter",
+  "version": "1.0.0",
+  "description": "A simple webpack/TypeScript starter project.",
+  "license": "MIT",
+  "repository": "giannico/webpack-typescript-starter",
+  "author": "Andre Giannico <andre@andregiannico.com>",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:watch:dev": "npm run build:dev -- --watch",
+    "build:watch:prod": "npm run build:prod -- --watch",
+    "build:dev": "npm run webpack -- --env.env=dev",
+    "build:prod": "npm run webpack -- --env.env=prod --bail",
+    "dev": "npm run build:watch:dev",
+    "prebuild": "npm run clean",
+    "build": "npm run build:prod",
+    "webpack": "webpack",
+    "prestart": "npm run build",
+    "start": "node ./dist/app.js",
+    "lint": "tslint -c tslint.json \"./src/**/*.ts\""
+  },
+  "keywords": [
+    "typescript",
+    "webpack",
+    "starter"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "fork-ts-checker-webpack-plugin": "0.2.7",
+    "nodemon": "1.11.0",
+    "rimraf": "2.6.1",
+    "ts-loader": "2.3.1",
+    "tslint": "5.5.0",
+    "typescript": "2.4.2",
+    "webpack": "3.4.1",
+    "webpack-merge": "4.1.0",
+    "webpack-shell-plugin": "0.5.0"
+  }
+}
